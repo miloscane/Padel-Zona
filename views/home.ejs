@@ -1,0 +1,180 @@
+<%- include ("partials/header") -%>
+	<div class="home">
+		<div class="homeVideo">
+			<video poster="/videos/promo2.jpg" muted autoplay loop>
+				<source src="/videos/promo2.mp4" type="video/mp4">
+			</video>
+			<div class="logo">
+				<img src="/logos/logo.jpg">
+			</div>
+			<div class="triangleLeft"></div>
+			<div class="triangleRight"></div>
+		</div>
+		<div class="trioInfo">
+			<div class="contentWidth">
+				<div class="inlines">
+					<div class="inline">
+						<div class="border"></div>
+						<div class="number">4</div>
+						<div class="note">OTVORENA TERENA</div>
+						<div class="border"></div>
+					</div>
+					<div class="inline">
+						<div class="border"></div>
+						<div class="number">3</div>
+						<div class="note">ZATVORENA TERENA</div>
+						<div class="border"></div>
+					</div>
+					<div class="inline">
+						<div class="border"></div>
+						<div class="number">3 000m<sup>2</sup></div>
+						<div class="note">POVRŠINE</div>
+						<div class="border"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sadrzaj">
+			<div class="triangleLeft"></div>
+			<div class="triangleRight"></div>
+			<div class="contentWidth">
+				<div class="title">Sadržaj Padel Zone Sinđelić</div>
+				<div class="inlines">
+					<div class="inline">
+						<div class="icon"><img src="/images/courtIcon.png"></div>
+						<div class="note">TERENI</div>
+					</div>
+					<div class="inline">
+						<div class="icon"><img src="/images/opremaIcon.png"></div>
+						<div class="note">OPREMA</div>
+					</div>
+					<div class="inline">
+						<div class="icon"><img src="/images/beerIcon.png"></div>
+						<div class="note">BAR</div>
+					</div>
+					<div class="inline">
+						<div class="icon"><img src="/images/saunaIcon.png"></div>
+						<div class="note">SAUNA</div>
+					</div>
+					<div class="inline">
+						<div class="icon"><img src="/images/parkingIcon.png"></div>
+						<div class="note">PARKING</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="testimonial">
+			<div class="contentWidth">
+				<div class="title">Rekli su o nama</div>
+				<div class="inlines">
+					<div class="inline">
+						<div class="text">
+							Sve preporuke za najbolji padel centar u Beogradu!<br>Odlično mesto za druženje i rekreaciju.
+						</div>
+						<div class="imageWrap">
+							<div class="image">
+								<img src="/images/rade.png">
+							</div>
+							<div class="nameWrap">
+								<div class="name">John Doe</div>
+								<div class="stars"><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div></div>
+							</div>
+						</div>
+					</div>
+					<div class="inline">
+						<div class="text">
+							Sve preporuke za najbolji padel centar u Beogradu!<br>Odlično mesto za druženje i rekreaciju.
+						</div>
+						<div class="imageWrap">
+							<div class="image">
+								<img src="/images/rade.png">
+							</div>
+							<div class="nameWrap">
+								<div class="name">John Doe</div>
+								<div class="stars"><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div></div>
+							</div>
+						</div>
+					</div>
+					<div class="inline">
+						<div class="text">
+							Sve preporuke za najbolji padel centar u Beogradu!<br>Odlično mesto za druženje i rekreaciju.
+						</div>
+						<div class="imageWrap">
+							<div class="image">
+								<img src="/images/rade.png">
+							</div>
+							<div class="nameWrap">
+								<div class="name">John Doe</div>
+								<div class="stars"><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div><div class="star"><img src="/images/star.png"></div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="picture">
+			<div class="overlay"></div>
+			<div class="topTriangle"></div>
+			<div class="bottomTriangle"></div>
+			<div class="contentWidth">
+				<div class="inlines">
+					<div class="inline textWrap">
+						<div class="title">ŠTA JE PADEL?</div>
+						<div class="text">
+							Padel je reketni sport koji kombinuje elemente tenisa, skvoša i badmintona. Obično se igra u parovima na zatvorenom terenu koji je trećina veličine teniskog terena. <br>&nbsp;<br>Bodovanje je isto kao u tenisu, a loptice koje se koriste su slične, ali sa malo manjim pritiskom. Glavna razlika je u tome što teren ima staklene zidove i sa njih se loptice mogu igrati na sličan način kao u igri skvoša. Visina lopte koja se servira mora biti na nivou struka ili ispod njega.
+						</div>
+					</div>
+					<div class="inline image">
+						<img src="/images/teren.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="galerija">
+			<div class="contentWidth">
+				<div class="title">Galerija</div>
+				<div class="categories" id="categories">
+					<div class="category" id="gallery-init" data-name="pictures" onclick="categoryPick(this)">
+						<div class="icon"><img src="/images/picturesIcon.png"></div>
+						<div class="note">Fotografije</div>
+					</div>
+					<div class="category" data-name="videos" onclick="categoryPick(this)">
+						<div class="icon"><img src="/images/videosIcon.png"></div>
+						<div class="note">Video</div>
+					</div>
+				</div>
+				<div id="galleries">
+					<div data-name="pictures" class="gallery">
+						<%-include ("partials/homePhotos")%>
+					</div>
+					<div data-name="videos" class="gallery">
+						<%-include ("partials/homeVideos")%>
+					</div>
+				</div>
+				<script>
+					function categoryPick(elem){
+						var categories = document.getElementById("categories").getElementsByClassName("category");
+						for(var i=0;i<categories.length;i++){
+							categories[i].classList.remove("categoryActive");
+						}
+						elem.classList.add("categoryActive");
+
+						var galleries = document.getElementById("galleries").getElementsByClassName("gallery");
+						for(var i=0;i<galleries.length;i++){
+							if(galleries[i].dataset.name!=elem.dataset.name){
+								galleries[i].style.display="none";
+							}else{
+								galleries[i].style.display="block";
+							}
+						}
+					}
+
+					categoryPick(document.getElementById("gallery-init"))
+				</script>
+			</div>
+		</div>
+		<div id="map" style="height:500px"></div>
+		<script src="/js/map.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsUyoMs0Ba_6bPbtD5A5_1yOJXjjMYsMQ&amp;callback=initMap" async="" defer=""></script>
+	</div>
+<%- include ("partials/footer") -%>

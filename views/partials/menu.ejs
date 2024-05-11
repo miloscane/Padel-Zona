@@ -1,0 +1,42 @@
+<div id="menu" class="primaryMenu">
+	<div class="contentWidth">
+		<div class="logo">
+			<img src="/logos/logo.png">
+		</div>
+		<div class="menu">
+			<div class="menuItem" onclick="scrollToSection('home')">Padel</div>
+			<div class="menuItem"><a href="/demo">O nama</a></div>
+			<div class="menuItem" onclick="scrollToSection('license')">Pravila</div>
+			<div class="menuItem" onclick="scrollToSection('testimonials')">Vesti</div>
+			<div class="menuItem" onclick="scrollToSection('testimonials')">Cenovnik</div>
+			<div class="menuItem" onclick="scrollToSection('testimonials')">Galerija</div>
+			<div class="contactPhoneButton">Rezerviši</div>
+		</div>
+		<div class="responsiveHandle" id="responsive-menu-handle" onclick="openMenu(this)">
+			<div class="wrap">
+				<div class="topBar bar"></div>
+				<div class="middleBar bar"></div>
+				<div class="bottomBar bar"></div>
+			</div>
+		</div>
+		<script>
+			function openMenu(elem){
+				var menu = elem.parentElement.getElementsByClassName("menu")[0];
+				if(elem.dataset.opened==1){
+					//zatvori meni
+					menu.classList.remove(menu.classList[0]+"Active");
+					elem.classList.remove(elem.classList[0]+"Active");
+					elem.dataset.opened = 0;
+				}else{
+					//Otvori meni
+					menu.classList.add(menu.classList[0]+"Active");
+					elem.classList.add(elem.classList[0]+"Active");
+					elem.dataset.opened = 1;
+				}
+			}
+		</script>
+		<div class="contact">
+			<div class="button">Rezerviši</div>
+		</div>
+	</div>
+</div>
