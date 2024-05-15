@@ -1321,6 +1321,14 @@ footer .inlines .inline .item .note{
     .galerija .category .icon{
         width:50px;
     }
+
+    .galerijaPage .galerijaHeader .left{
+        width:65%;
+    }
+
+    .galerijaPage .galerijaHeader .right{
+        width:35%;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -1330,10 +1338,34 @@ footer .inlines .inline .item .note{
     footer .footerContent .copyright{
         font-size:10px;
     }
+
+    .galerijaPage .galerijaHeader .left .description{
+        display:none;
+    }
 }
 
 @media screen and (max-width: 400px) {
     .cenovnik table td:first-child{
         width:60%;
     }
+
+    .galerijaPage .galerijaHeader .info{
+        display: block;
+        width:100%;
+        padding-left:0;
+    }
+
+    .galerijaPage .galerijaHeader .left{
+        width:50%;
+    }
+
+    .galerijaPage .galerijaHeader .right{
+        width:50%;
+    }
 }
+
+
+
+
+
+
