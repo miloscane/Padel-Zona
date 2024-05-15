@@ -60,3 +60,12 @@ server.get('/cenovnik',async (req,res)=>{
 server.get('/galerija',async (req,res)=>{
 	res.render("galerija",{});
 });
+
+server.get('/vesti/vest',async (req,res)=>{
+	res.render("vest",{});
+});
+
+
+
+
+
