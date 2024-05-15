@@ -40,3 +40,23 @@ http.listen(process.env.PORT, function(){
 server.get('/',async (req,res)=>{
 	res.render("home",{});
 });
+
+server.get('/o-nama',async (req,res)=>{
+	res.render("onama",{});
+});
+
+server.get('/pravila',async (req,res)=>{
+	res.render("pravila",{});
+});
+
+server.get('/vesti',async (req,res)=>{
+	res.render("vesti",{});
+});
+
+server.get('/cenovnik',async (req,res)=>{
+	res.render("cenovnik",{});
+});
+
+server.get('/galerija',async (req,res)=>{
+	res.render("galerija",{});
+});

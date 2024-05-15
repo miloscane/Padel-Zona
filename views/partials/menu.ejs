@@ -1,15 +1,15 @@
 <div id="menu" class="primaryMenu">
 	<div class="contentWidth">
 		<div class="logo">
-			<img src="/logos/logo.png">
+			<a href="/"><img src="/logos/logo.png"></a>
 		</div>
 		<div class="menu">
-			<div class="menuItem" onclick="scrollToSection('home')">Padel</div>
-			<div class="menuItem"><a href="/demo">O nama</a></div>
-			<div class="menuItem" onclick="scrollToSection('license')">Pravila</div>
-			<div class="menuItem" onclick="scrollToSection('testimonials')">Vesti</div>
-			<div class="menuItem" onclick="scrollToSection('testimonials')">Cenovnik</div>
-			<div class="menuItem" onclick="scrollToSection('testimonials')">Galerija</div>
+			<div class="menuItem"><a href="/">Padel</a></div>
+			<div class="menuItem"><a href="/o-nama">O nama</a></div>
+			<div class="menuItem"><a href="/pravila">Pravila</a></div>
+			<div class="menuItem"><a href="/vesti">Vesti</a></div>
+			<div class="menuItem"><a href="/cenovnik">Cenovnik</a></div>
+			<div class="menuItem"><a href="/galerija">Galerija</a></div>
 			<div class="contactPhoneButton">Rezerviši</div>
 		</div>
 		<div class="responsiveHandle" id="responsive-menu-handle" onclick="openMenu(this)">
@@ -36,7 +36,7 @@
 			}
 		</script>
 		<div class="contact">
-			<div class="button">Rezerviši</div>
+			<div class="button" onclick="document.getElementById('booking').style.display='block'">Rezerviši</div>
 		</div>
 	</div>
 </div>

@@ -1,0 +1,94 @@
+<%- include ("partials/header") -%>
+	<div class="galerijaPage">
+		<div class="galerijaHeader">
+			<div class="contentWidth">
+				<div class="left">
+					<div class="logo">
+						<img src="/favicon.png">
+					</div>
+					<div class="info">
+						<div class="titleWrap">
+							<div class="title">
+								Padel Zona Sinđelić
+							</div>
+							<div class="description">
+								Dobrodošli na vašu destinaciju za uživanje u padelu u najboljem ambijentu! Naša firma nudi vrhunske padel terene koji su idealni za sve ljubitelje ovog dinamičnog sporta. 
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="right">
+					<div class="socials">
+						<div class="social">
+							<div class="image">
+								<img src="/images/instagramColored.png">
+							</div>
+							<div class="text">
+								<a href="">@padelzona</a>
+							</div>
+						</div>
+						<div class="social">
+							<div class="image">
+								<img src="/images/tikTokColored.png">
+							</div>
+							<div class="text">
+								<a href="">@padelzona</a>
+							</div>
+						</div>
+						<div class="social">
+							<div class="image">
+								<img src="/images/facebookColored.png">
+							</div>
+							<div class="text">
+								<a href="">@padelzona</a>
+							</div>
+						</div>
+					</div>	
+				</div>
+				
+			</div>
+		</div>
+		<div class="galerija">
+			<div class="contentWidth">
+				<div class="categories" id="categories">
+					<div class="category" id="gallery-init" data-name="pictures" onclick="categoryPick(this)">
+						<div class="icon"><img src="/images/picturesIcon.png"></div>
+						<div class="note">Fotografije</div>
+					</div>
+					<div class="category" data-name="videos" onclick="categoryPick(this)">
+						<div class="icon"><img src="/images/videosIcon.png"></div>
+						<div class="note">Video</div>
+					</div>
+				</div>
+				<div id="galleries">
+					<div data-name="pictures" class="gallery">
+						<%-include ("partials/homePhotos")%>
+					</div>
+					<div data-name="videos" class="gallery">
+						<%-include ("partials/homeVideos")%>
+					</div>
+				</div>
+				<script>
+					function categoryPick(elem){
+						var categories = document.getElementById("categories").getElementsByClassName("category");
+						for(var i=0;i<categories.length;i++){
+							categories[i].classList.remove("categoryActive");
+						}
+						elem.classList.add("categoryActive");
+
+						var galleries = document.getElementById("galleries").getElementsByClassName("gallery");
+						for(var i=0;i<galleries.length;i++){
+							if(galleries[i].dataset.name!=elem.dataset.name){
+								galleries[i].style.display="none";
+							}else{
+								galleries[i].style.display="block";
+							}
+						}
+					}
+
+					categoryPick(document.getElementById("gallery-init"))
+				</script>
+			</div>
+		</div>
+	</div>
+<%- include ("partials/footer") -%>

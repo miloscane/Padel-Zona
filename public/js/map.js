@@ -172,15 +172,15 @@ function initMap() {
 		position: myLatLng,
 		map: map,
     icon:{
-      url: "https://beta.padelzona.rs/images/map.png"
+      url: "https://padelzona.rs/images/map.png"
      }
 		//title: 'Tehnik'
 	});
 	
-	/*var contentString = '<div style="text-align:center;"><div style="color:rgba(37,78,118,1); font-weight:bold; margin-top:10px; font-size:14px;">Mobatec<br>Headquarters</div></div>';
+	var contentString = '<div style="text-align:center;">Vojislava<br>Ilića 86</div>';
 
 	var infowindow = new google.maps.InfoWindow({
 		content: contentString
 	});
-	infowindow.open(map,marker);*/
+	infowindow.open(map,marker);
 }
