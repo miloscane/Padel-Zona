@@ -510,6 +510,10 @@ footer .inlines .inline .item .note{
     z-index:1000;
 }
 
+.homeVideo .mobile{
+    display:none;
+}
+
 .homeVideo .logo{
     position:absolute;
     top:50%;
@@ -1516,6 +1520,14 @@ footer .inlines .inline .item .note{
     }
 
     .galerijaPage .galerijaHeader .left .description{
+        display:none;
+    }    
+
+    .homeVideo .mobile{
+        display:block;
+    }
+
+    .homeVideo .desktop{
         display:none;
     }
 }
