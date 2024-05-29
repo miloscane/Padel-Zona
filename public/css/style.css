@@ -1387,6 +1387,71 @@ footer .inlines .inline .item .note{
 }
 
 
+.homeNews .inlines{
+    text-align:center;
+    font-size:0;
+}
+
+.homeNews .inlines .news{
+    display:inline-block;
+    vertical-align: top;
+    width:50%;
+}
+
+.homeNews .inlines .inline .title{
+    font-weight: 500;
+    color: rgb(149, 26, 36);
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.homeNews{
+    padding:40px 0;
+}
+
+.homeNews .title{
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(149, 26, 36);
+}
+
+.homeNews .inlines .news .imageWrap{
+    display:inline-block;
+    vertical-align: top;
+    width:40%;
+}
+
+.homeNews .inlines .news .textWrap{
+    display:inline-block;
+    vertical-align: top;
+    width:60%;
+    font-size:14px;
+    text-align:left;
+    padding-left:20px;
+}
+
+.homeNews .inlines .news .textWrap .title{
+    font-weight:500;
+    font-size:16px;
+    text-align:left;
+    padding-top:0;
+    margin-bottom:7px;
+}
+
+.homeNews .news .textWrap .buttonWrap{
+    margin-top:7px;
+}
+
+.homeNews .news .textWrap .buttonWrap .button a{
+    display:inline-block;
+    background-color:rgb(205,157,98);
+    color:rgb(255,255,255);
+    font-size:14px;
+    padding:10px;
+    font-weight:500;
+}
 
 @media screen and (max-width: 850px) {
     .home .trioInfo .inlines .inline{
@@ -1488,6 +1553,16 @@ footer .inlines .inline .item .note{
         margin-bottom:60px;
         padding:0 !important;
     }
+
+    .vesti .news .imageWrap{
+        width:30%;
+        aspect-ratio: 1;
+        height:auto;
+    }
+
+    .vesti .news .content{
+        width:70%;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -1508,6 +1583,12 @@ footer .inlines .inline .item .note{
 
     .galerijaPage .galerijaHeader .right{
         width:35%;
+    }
+
+    .homeNews .inlines .news{
+        display:block;
+        width:90%;
+        margin:0 auto;
     }
 }
 
@@ -1531,6 +1612,25 @@ footer .inlines .inline .item .note{
         display:none;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .vesti .news .imageWrap{
+        width:70%;
+        aspect-ratio: 1;
+        margin:0 auto;
+        display:block;
+    }
+
+    .vesti .news .content{
+        width:90%;
+        margin:0 auto;
+        display:block;
+        padding:0;
+        padding-top:10px;
+    }
+}
+
+
 
 @media screen and (max-width: 400px) {
     .cenovnik table td:first-child{
