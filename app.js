@@ -201,7 +201,7 @@ server.post('/deleteBooking',async (req,res)=>{
 	}else{
 		res.redirect("/")
 	}
-});
+}); 
 
 
 
