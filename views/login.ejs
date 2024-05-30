@@ -1,0 +1,23 @@
+<%- include ("partials/header") -%>
+	<div class="login">
+		<form method="POST" action="/login" id="form">
+			<div class="inputWrap">
+				<div class="note">Email</div>
+				<div class="inputWrapper">
+					<input type="text" name="email">
+				</div>
+			</div>
+			<div class="inputWrap">
+				<div class="note">Password</div>
+				<div class="inputWrapper">
+					<input type="password" name="password">
+				</div>
+			</div>
+			<div class="inputWrap" onclick="document.getElementById('form').submit()">
+				<div class="button">
+					Uloguj se
+				</div>
+			</div>
+		</form>
+	</div>
+<%- include ("partials/footer") -%>

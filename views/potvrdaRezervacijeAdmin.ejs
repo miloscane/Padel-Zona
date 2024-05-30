@@ -1,0 +1,19 @@
+<%- include ("partials/header") -%>
+	<script>
+		var json = <%-JSON.stringify(rezervacija)%>;
+	</script>
+	<div class="login">
+		<div>
+			Uspešno ste napravili rezervaciju na ime <span id="ime"></span> za datum <span id="datum"></span> u vreme <span id="time"></span> na terenu broj <span id="teren"></span>
+		</div>
+		<div class="button">
+			<a href="/administracija">Rezervacije</a>
+		</div>
+	</div>
+	<script>
+		document.getElementById("ime").innerHTML = json.imeRezervacije;
+		document.getElementById("datum").innerHTML = json.datum;
+		document.getElementById("time").innerHTML = json.time;
+		document.getElementById("teren").innerHTML = json.court;
+	</script>
+<%- include ("partials/footer") -%>

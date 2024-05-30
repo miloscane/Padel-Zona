@@ -1,0 +1,217 @@
+<%- include ("partials/header") -%>
+	<script>
+		var rezervacije = <%-JSON.stringify(rezervacije)%>;
+		var weekDays = ["Ned.","Ponedeljak","Utorak","Sreda","Četvrtak","Petak","Subota"]
+		function getMonday(d) {
+			d = new Date(d);
+			var day = d.getDay(),
+			diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
+			return new Date(d.setDate(diff));
+		}
+		var today = <%= today%>;
+		today = new Date(today);
+		var monday = getMonday(today);
+		var firstMonday = new Date(monday);
+		function generateWeek(){
+			document.getElementById("nedelja").innerHTML = "";
+			var currentDay = monday;
+			for(var i=0;i<7;i++){
+				var dayElem = document.createElement("DIV");
+				dayElem.setAttribute("class","dayElem");
+				dayElem.setAttribute("data-date",currentDay.getTime());
+				dayElem.setAttribute("onclick","datePicked(this)");
+					var date = document.createElement("DIV");
+					date.setAttribute("class","date");
+					var dayString = currentDay.getDate().toString().length==1 ? "0"+currentDay.getDate() : currentDay.getDate();
+					var monthString = eval(currentDay.getMonth()+1).toString().length==1 ? "0"+eval(currentDay.getMonth()+1) : eval(currentDay.getMonth()+1);
+					date.innerHTML = weekDays[currentDay.getDay()] + " " + dayString+"."+monthString+".";
+					dayElem.appendChild(date);
+				document.getElementById("nedelja").appendChild(dayElem);
+				currentDay.setDate(currentDay.getDate()+1);
+			}
+		}
+
+		function moveWeek(direction){
+			var testMondayTime = monday.getTime()+direction*(7-direction)*8.64e+7;
+			var testMonday = getMonday(new Date(testMondayTime));
+			if(testMonday.getTime()<firstMonday.getTime()){
+				//console.log("fail")
+			}else{
+				monday = new Date(testMonday);
+				generateWeek()				
+			}
+		}
+
+		function datePicked(elem){
+			document.getElementById("nedelja-wrap").style.display = "none";
+			document.getElementById("termini").style.display = "block";
+			var date = new Date(Number(elem.dataset.date));
+			var dayString = date.getDate().toString().length==1 ? "0"+date.getDate() : date.getDate();
+			var monthString = eval(date.getMonth()+1).toString().length==1 ? "0"+eval(date.getMonth()+1) : eval(date.getMonth()+1);
+			document.getElementById("termini-title").innerHTML = weekDays[date.getDay()] + " " + dayString+"."+monthString+".";
+			var termini = document.getElementsByClassName("termin");
+			for(var i=0;i<termini.length;i++){
+				termini[i].setAttribute("data-datetime",date.getTime());
+				termini[i].setAttribute("data-datestring",weekDays[date.getDay()] + " " + dayString+"."+monthString+".");
+				termini[i].setAttribute("data-date",dayString+"."+monthString+".");
+				termini[i].classList.remove("terminBooked");
+				delete termini[i].dataset.booked;
+				for(var j=0;j<rezervacije.length;j++){
+					if(rezervacije[j].date==dayString+"."+monthString+"." && rezervacije[j].court == termini[i].dataset.court && rezervacije[j].time == termini[i].dataset.time){
+						termini[i].classList.add("terminBooked")
+						termini[i].dataset.booked = JSON.stringify(rezervacije[j]);
+					}
+				}
+			}
+		}
+
+		function backToWeeks(){
+			document.getElementById("nedelja-wrap").style.display = "block";
+			document.getElementById("termini").style.display = "none";
+		}
+
+		function terminPick(elem){
+			document.getElementById("termini").style.display = "none";
+			document.getElementById("termin").style.display = "block";
+			if(elem.dataset.booked){
+				document.getElementById("booked").style.display = "block";
+				document.getElementById("notBooked").style.display = "none";
+
+				var bookingJson = JSON.parse(elem.dataset.booked);
+				document.getElementById("booking-name").innerHTML = bookingJson.imeRezervacije;
+				document.getElementById("booking-phone").innerHTML = bookingJson.telefon;
+				document.getElementById("booking-email").innerHTML = bookingJson.email;
+				document.getElementById("cancel-button").dataset.id = bookingJson.uniqueId;
+
+				document.getElementById("booking-title").innerHTML = elem.dataset.datestring+"<br>"+elem.dataset.time+"<br>Teren "+elem.dataset.court;
+
+			}else{
+				document.getElementById("booked").style.display = "none";
+				document.getElementById("notBooked").style.display = "block";
+
+				document.getElementById("new-booking-time").value = elem.dataset.time;
+				document.getElementById("new-booking-datetime").value = elem.dataset.datetime;
+				document.getElementById("new-booking-court").value = elem.dataset.court;
+				document.getElementById("new-booking-date").value = elem.dataset.date;
+				document.getElementById("new-booking-title").innerHTML = elem.dataset.datestring+"<br>"+elem.dataset.time+"<br>Teren "+elem.dataset.court;
+			}
+		}
+
+		function backToTermini(){
+			document.getElementById("termin").style.display = "none";
+			document.getElementById("termini").style.display = "block";
+		}
+	</script>
+	<div class="administracija">
+		<div class="rezervacije">
+			<div class="nedelja" id="nedelja-wrap">
+				<div class="arrow arrowLeft" onclick="moveWeek(-1)"></div>
+				<div class="nedeljaWrap" id="nedelja"></div>
+				<div class="arrow arrowRight" onclick="moveWeek(1)"></div>
+			</div>
+			<script>
+				generateWeek()
+			</script>
+			<div class="terminiWrap" id="termini" style="display:none">
+				<div class="nazad" onclick="backToWeeks()">Nazad</div>
+				<div class="title" id="termini-title"></div>
+				<div class="teren">
+					<div class="title">Teren 1</div>
+					<div class="termini"></div>
+				</div>
+				<div class="teren">
+					<div class="title">Teren 2</div>
+					<div class="termini"></div>
+				</div>
+				<div class="teren">
+					<div class="title">Teren 3</div>
+					<div class="termini"></div>
+				</div>
+				<script>
+					var termini = document.getElementsByClassName("termini");
+					for(var i=0;i<termini.length;i++){
+						for(var j=0;j<16;j++){
+							var vremeTermina = eval(8+j).toString().length==1 ? "0"+eval(8+j) : eval(8+j);
+							var termin = document.createElement("DIV");
+							termin.setAttribute("class","termin");
+							termin.setAttribute("data-time",vremeTermina+":00");
+							termin.setAttribute("data-court",eval(i+1));
+							//termin.setAttribute("data-booked","0")
+							termin.setAttribute("onclick","terminPick(this)");
+							termin.innerHTML = vremeTermina+":00";
+							termini[i].appendChild(termin)
+						}	
+					}
+				</script>
+			</div>
+			<div class="terminInfo" id="termin" style="display:none">
+				<div class="nazad" onclick="backToTermini()">Nazad</div>
+				<div class="booked" id="booked" style="display:none">
+					<div class="title" id="booking-title"></div>
+					<div class="infoWrap">
+						Ime: <span id="booking-name"></span>
+					</div>
+					<div class="infoWrap">
+						Tel: <span id="booking-phone"></span>
+					</div>
+					<div class="infoWrap">
+						Email: <span id="booking-email"></span>
+					</div>
+					<div class="button" id="cancel-button" onclick="deleteBooking(this)">Otkaži termin</div>
+					<form method="POST" action="/deleteBooking" style="display: none;" id="delete-form">
+						<input type="text" name="id" id="delete-id">
+					</form>
+					<script>
+						function deleteBooking(elem){
+							document.getElementById("delete-id").value = elem.dataset.id;
+							document.getElementById("delete-form").submit();
+						}
+					</script>
+				</div>
+				<div class="notBooked" id="notBooked" style="display:none">
+					<input type="text" id="new-booking-datetime" style="display:none">
+					<input type="text" id="new-booking-time" style="display:none">
+					<input type="text" id="new-booking-date" style="display:none">
+					<input type="text" id="new-booking-court" style="display:none">
+					<div class="title" id="new-booking-title"></div>
+					<div class="inputWrap">
+						<div class="note">Ime rezervacije:</div>
+						<div class="inputWrapper">
+							<input type="text" id="new-booking-name">
+						</div>
+					</div>
+					<div class="inputWrap">
+						<div class="note">Broj telefona:</div>
+						<div class="inputWrapper">
+							<input type="text" id="new-booking-phone">
+						</div>
+					</div>
+					<div class="inputWrap">
+						<div class="note">Email:</div>
+						<div class="inputWrapper">
+							<input type="text" id="new-booking-email">
+						</div>
+					</div>
+					<div class="button" onclick="newBooking()">Rezerviši</div>
+					<form method="POST" action="/newBooking" style="display:none" id="new-form">
+						<input type="text" name="json" id="new-json">
+					</form>
+					<script>
+						function newBooking(){
+							var json = {};
+							json.imeRezervacije = document.getElementById("new-booking-name").value;
+							json.telefon = document.getElementById("new-booking-phone").value;
+							json.email = document.getElementById("new-booking-email").value;
+							json.time = document.getElementById("new-booking-time").value;
+							json.datetime = document.getElementById("new-booking-datetime").value;
+							json.date = document.getElementById("new-booking-date").value;
+							json.court = document.getElementById("new-booking-court").value;
+							document.getElementById("new-json").value = JSON.stringify(json);
+							document.getElementById("new-form").submit();
+						}
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+<%- include ("partials/footer") -%>

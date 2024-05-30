@@ -1453,6 +1453,227 @@ footer .inlines .inline .item .note{
     font-weight:500;
 }
 
+.login{
+    width:90%;
+    margin:0 auto;
+    max-width: 300px;
+    padding-top:70px;
+}
+
+.login .inputWrap{
+    margin-bottom:20px;
+
+}
+
+.login .inputWrap .note{
+    color:rgb(149, 26, 36);
+    margin-bottom:4px;
+}
+
+.login .inputWrap input{
+    width:100%;
+    padding:10px;
+    background-color:rgba(149,26,36);
+    color:rgb(255,255,255);
+    border:2px inset rgb(205,157,98);
+}
+
+.login .button{
+    background-color:rgb(205,157,98);
+    color:rgb(255,255,255);
+    font-size:14px;
+    padding:10px;
+    font-weight:500;
+    text-align:center;
+}
+
+.administracija .rezervacije{
+    width:100%;
+    max-width:400px;
+    margin:0 auto;
+    background-color:rgb(149,26,36);
+    color:rgb(255,255,255);
+}
+
+.rezervacije .nedelja{
+    font-size:0;
+    text-align:center;
+    padding:10px 5px;
+}
+
+.rezervacije .nedelja .arrow{
+    width:20px;
+    display:inline-block;
+    vertical-align: middle;
+    aspect-ratio: 0.3125;
+    background-position: center center;
+    background-size:100%;
+}
+
+.rezervacije .nedelja .nedeljaWrap{
+    width:calc(100% - 40px);
+    display:inline-block;
+    vertical-align: middle;
+    font-size:14px;
+    padding:20px;
+}
+
+.rezervacije .nedelja .arrowLeft{
+    background-image:url(/images/navLeft.png);
+}
+
+.rezervacije .nedelja .arrowRight{
+    background-image:url(/images/navRight.png);
+}
+
+.rezervacije .nedelja .nedeljaWrap .dayElem{
+    border:1px solid rgb(255,255,255);
+    padding:10px 5px;
+    margin-bottom:10px;
+    background-color:rgba(205,157,98,0);
+}
+
+.rezervacije .nedelja .nedeljaWrap .dayElem:hover{
+    background-color:rgba(205,157,98,1);
+}
+
+.rezervacije .nazad{
+    font-weight: 600;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    color: rgb(255, 255, 255);
+    background: rgb(205, 157, 98);
+    background: radial-gradient(circle, rgba(205, 157, 98, 1) 0%, rgba(218, 161, 108, 1) 100%);
+    -webkit-box-shadow: 0 0.1875rem 0.375rem rgb(0, 0, 0, 0.0);
+    box-shadow: 0 0.1875rem 0.375rem rgb(0, 0, 0, 0.0);
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.rezervacije .terminiWrap .title{
+    font-weight:700;
+    margin:10px auto;
+    text-align: center;
+    font-size:18px;
+}
+
+.rezervacije .terminiWrap .teren .title{
+    font-weight:500;
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.rezervacije .terminiWrap .termini{
+    text-align: center;
+}
+
+.rezervacije .terminiWrap .termini .termin{
+    display:inline-block;
+    vertical-align: middle;
+    padding:10px;
+    border:1px solid rgb(255,255,255);
+    margin:3px;
+    width:80px;
+}
+
+.administracija .rezervacije .terminiWrap .termini .terminBooked{
+    opacity:0.3;
+}
+
+.rezervacije .terminiWrap .termini .termin:hover{
+    background-color:rgba(205, 157, 98,0.3);
+}
+
+.rezervacije .terminInfo .notBooked{
+    width:90%;
+    margin:0 auto;
+    text-align:center;
+    padding:15px 0;
+}
+
+.rezervacije .terminInfo .notBooked .inputWrap{
+    margin-bottom:15px;
+}
+
+.rezervacije .terminInfo .notBooked .inputWrap .note{
+    margin-bottom:4px;
+}
+
+.rezervacije .terminInfo .notBooked .inputWrap input{
+    width:100%;
+    padding:10px;
+    color:rgb(50,50,50);
+    text-align:center;
+}
+
+.rezervacije .terminInfo .notBooked .button{
+    font-weight: 600;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    color: rgb(255, 255, 255);
+    background: rgb(205, 157, 98);
+    background: radial-gradient(circle, rgba(205, 157, 98, 1) 0%, rgba(218, 161, 108, 1) 100%);
+    -webkit-box-shadow: 0 0.1875rem 0.375rem rgb(0, 0, 0, 0.0);
+    box-shadow: 0 0.1875rem 0.375rem rgb(0, 0, 0, 0.0);
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.rezervacije .terminInfo .notBooked .title{
+    font-size:20px;
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+
+.rezervacije .terminInfo .booked{
+    width:90%;
+    margin:0 auto;
+    text-align:center;
+    padding:15px 0;
+}
+
+.rezervacije .terminInfo .booked .infoWrap{
+    margin-bottom:15px;
+    font-weight:500;
+}
+
+.rezervacije .terminInfo .booked .infoWrap span{
+    font-weight:300;
+}
+
+.rezervacije .terminInfo .booked .button{
+    font-weight: 600;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    color: rgb(255, 255, 255);
+    background: rgb(205, 157, 98);
+    background: radial-gradient(circle, rgba(205, 157, 98, 1) 0%, rgba(218, 161, 108, 1) 100%);
+    -webkit-box-shadow: 0 0.1875rem 0.375rem rgb(0, 0, 0, 0.0);
+    box-shadow: 0 0.1875rem 0.375rem rgb(0, 0, 0, 0.0);
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.rezervacije .terminInfo .booked .title{
+    font-size:20px;
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+
 @media screen and (max-width: 850px) {
     .home .trioInfo .inlines .inline{
         margin:0 auto;
