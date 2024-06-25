@@ -117,7 +117,12 @@ server.get('/vesti/vest',async (req,res)=>{
 });
 
 server.get('/login',async (req,res)=>{
-	res.render("login",{});
+	if(req.session.user){
+		res.redirect("/administracija")
+	}else{
+		res.render("login",{});
+	}
+	
 });
 
 server.post('/login',async (req,res)=>{
