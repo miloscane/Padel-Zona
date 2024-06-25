@@ -122,7 +122,7 @@ server.get('/login',async (req,res)=>{
 
 server.post('/login',async (req,res)=>{
 	if(req.session.user){
-		res.redirect("/admin")
+		res.redirect("/administracija")
 	}else{
 		if(req.body.email==process.env.loginuser && req.body.password==process.env.loginpass){
 			req.session.user	=	"Admin";
