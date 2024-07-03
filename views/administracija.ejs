@@ -1,4 +1,14 @@
 <%- include ("partials/header") -%>
+	<script src="/js/pdf.js"></script>
+	<script src="/js/font.js"></script>
+	<script src="/js/font2.js"></script>
+	<script>
+		var mm = 3.7795275591;
+
+		function stringArray(string,count){
+			return string.match(new RegExp('.{1,' + count + '}', 'g'));
+		}
+	</script>
 	<script>
 		var rezervacije = <%-JSON.stringify(rezervacije)%>;
 		var weekDays = ["Ned.","Ponedeljak","Utorak","Sreda","Četvrtak","Petak","Subota"]
@@ -63,6 +73,7 @@
 					}
 				}
 			}
+			document.getElementById("print-button").dataset.date = elem.dataset.date;
 		}
 
 		function backToWeeks(){
@@ -101,7 +112,89 @@
 			document.getElementById("termin").style.display = "none";
 			document.getElementById("termini").style.display = "block";
 		}
+
+		function stampajDan(elem){
+			
+			var date = new Date(Number(elem.dataset.date));
+			var dayString = date.getDate().toString().length==1 ? "0"+date.getDate() : date.getDate();
+			var monthString = eval(date.getMonth()+1).toString().length==1 ? "0"+eval(date.getMonth()+1) : eval(date.getMonth()+1);
+			var rezervacijeZaStampu = [];
+			for(var j=0;j<rezervacije.length;j++){
+				if(rezervacije[j].date==dayString+"."+monthString+"."){
+					rezervacijeZaStampu.push(rezervacije[j])
+				}
+			}
+
+			var doc = new jsPDF({
+				orientation: 'l',
+				unit: 'mm',
+				format: 'a4',
+				compress: true
+				//putOnlyUsedFonts:true
+			});
+			pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
+			pageWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
+			var yPos = 12;
+			var xPos = 12;
+			doc.addFileToVFS("PTSans.ttf", PTSans);
+			doc.addFileToVFS("PTSansBold.ttf", PTSansBold);
+			doc.addFont('PTSans.ttf', 'PTSans', 'normal');
+			doc.addFont('PTSansBold.ttf', 'PTSans', 'bold');
+			doc.setFont('PTSans'); // set font
+			doc.getFontList("PTSans");
+			doc.addImage(logoLogoBlob, 'PNG', pageWidth/2-1000/mm/1.3/2, 5, 1000/mm/1.3, 902/mm/1.3,'','FAST');
+			doc.setFontType("bold");
+			doc.setFontSize(20);
+	        doc.text("Rezervisani termini za datum "+dayString+"."+monthString+".",pageWidth/2,yPos,'center');
+			for(var i=0;i<3;i++){
+				xPos = 12+100*i;
+				yPos = 30;
+		        //yPos = yPos + 12;
+		        doc.setFontType("bold");
+				doc.setFontSize(16);
+				doc.text("Teren "+eval(i+1)+":",xPos,yPos,'left');
+				doc.setFontType("normal");
+				for(var j=0;j<16;j++){
+					yPos = yPos + 8;
+					var vremeTermina = eval(8+j).toString().length==1 ? "0"+eval(8+j) : eval(8+j);
+					vremeTermina = vremeTermina+":00";
+					for(var k=0;k<rezervacijeZaStampu.length;k++){
+						if(eval(i+1).toString()==rezervacijeZaStampu[k].court && vremeTermina==rezervacijeZaStampu[k].time){
+							doc.text(vremeTermina +" - " + rezervacijeZaStampu[k].imeRezervacije + " / "+rezervacijeZaStampu[k].telefon +" / "+rezervacijeZaStampu[k].email,xPos,yPos,'left');
+							break;
+						}
+					}
+					doc.text(vremeTermina +" - ",xPos,yPos,'left');
+				}
+			}
+	        
+		    
+
+	        window.open(doc.output('bloburl'), '_blank');
+
+
+		}
 	</script>
+	<div style="overflow:hidden;height:1px;width:1px;">
+		<canvas id="logo-canvas" width="1000" height="902"></canvas>
+		<script>
+			var logoCanvas = document.getElementById('logo-canvas');
+			var logoCanvasContext = logoCanvas.getContext('2d');
+			logoCanvasContext.globalAlpha = 0.05;
+			var logoLogoBlob;
+			function make_base3(){
+			  base_image3 = new Image();
+			  base_image3.crossOrigin="anonymous"
+			  base_image3.src = '/logos/logo2.png';
+			  base_image3.onload = function(){
+			    logoCanvasContext.drawImage(base_image3, 0, 0);
+			    logoLogoBlob 	=	logoCanvas.toDataURL("image/png", 1.0);
+
+			  }
+			}
+			make_base3();
+		</script>
+	</div>
 	<div class="administracija">
 		<div class="rezervacije">
 			<div class="nedelja" id="nedelja-wrap">
@@ -143,6 +236,7 @@
 						}	
 					}
 				</script>
+				<div class="nazad" id="print-button" onclick="stampajDan(this)">Štampaj</div>
 			</div>
 			<div class="terminInfo" id="termin" style="display:none">
 				<div class="nazad" onclick="backToTermini()">Nazad</div>
