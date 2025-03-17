@@ -14,7 +14,7 @@ dotenv.config();
 
 server.set('view engine','ejs');
 var viewArray	=	[__dirname+'/views'];
-var viewFolder	=	fs.readdirSync('views');
+var viewFolder	=	fs.readdirSync('views'); 
 for(var i=0;i<viewFolder.length;i++){
 	if(viewFolder[i].split(".").length==1){
 		viewArray.push(__dirname+'/'+viewFolder[i])
