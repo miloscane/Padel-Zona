@@ -10,7 +10,7 @@ const crypto			=	require('node:crypto');
 const session			=	require('express-session');
 const cookieParser		=	require('cookie-parser');
 const {MongoClient}		=	require('mongodb');
-dotenv.config();
+dotenv.config(); 
 
 server.set('view engine','ejs');
 var viewArray	=	[__dirname+'/views'];
