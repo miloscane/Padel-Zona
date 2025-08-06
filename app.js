@@ -193,7 +193,8 @@ server.post('/newBooking',async (req,res)=>{
 				rezervacijeDB.insertOne(json)
 				.then((dbResponse)=>{
 					res.render("potvrdaRezervacijeAdmin",{
-						rezervacija:json
+						rezervacija:json,
+						bucket: bucket,
 					});
 				})
 				.catch((error)=>{
@@ -218,7 +219,9 @@ server.post('/deleteBooking',async (req,res)=>{
 		var id = req.body.id;
 		rezervacijeDB.deleteOne({uniqueId:id})
 		.then((dbResponse)=>{
-			res.render("potvrdaOtkazivanjaAdmin",{});
+			res.render("potvrdaOtkazivanjaAdmin",{
+				bucket: bucket
+			});
 		})
 		.catch((error)=>{
 			console.log(error);
