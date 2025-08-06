@@ -34,6 +34,8 @@ const mongourl	=	process.env.mongourl;
 const client 	= 	new MongoClient(mongourl,{});
 var rezervacijeDB;
 
+var bucket = process.env.bucket ? process.env.bucket : ""
+
 function getDateAsStringForDisplay(date){
 	var yearString	=	date.getFullYear();
 	var month		=	eval(date.getMonth()+1);
@@ -85,42 +87,60 @@ http.listen(process.env.PORT, function(){
 });
 
 server.get('/',async (req,res)=>{
-	res.render("home",{});
+	res.render("home",{
+		bucket: bucket
+	});
 });
 
 server.get('/o-nama',async (req,res)=>{
-	res.render("onama",{});
+	res.render("onama",{
+		bucket: bucket
+	});
 });
 
 server.get('/pravila',async (req,res)=>{
-	res.render("pravila",{});
+	res.render("pravila",{
+		bucket: bucket
+	});
 });
 
 server.get('/vesti',async (req,res)=>{
 	if(req.session.user){
-		res.render("adminVesti",{})
+		res.render("adminVesti",{
+		bucket: bucket
+	})
 	}else{
-		res.render("vesti",{});
+		res.render("vesti",{
+		bucket: bucket
+	});
 	}
 });
 
 server.get('/cenovnik',async (req,res)=>{
-	res.render("cenovnik",{});
+	res.render("cenovnik",{
+		bucket: bucket
+	});
 });
 
 server.get('/galerija',async (req,res)=>{
-	res.render("galerija",{});
+	res.render("galerija",{
+		bucket: bucket
+	});
 });
 
 server.get('/vesti/vest',async (req,res)=>{
-	res.render("vest",{});
+	res.render("vest",{
+		bucket: bucket
+	});
 });
 
 server.get('/login',async (req,res)=>{
 	if(req.session.user){
 		res.redirect("/administracija")
 	}else{
-		res.render("login",{});
+		res.render("login",{
+			bucket: bucket
+		});
 	}
 	
 });
@@ -147,6 +167,7 @@ server.get('/administracija',async (req,res)=>{
 		.then((rezervacije)=>{
 			res.render("administracija",{
 				today: today.getTime(),
+				bucket: bucket,
 				rezervacije: rezervacije
 			});	
 		})

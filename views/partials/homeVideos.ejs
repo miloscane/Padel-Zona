@@ -1,6 +1,6 @@
-<div class="item" style="background-image:url(/videos/gallery/1.jpg)" onclick="openVideo(this)"></div>
-<div class="item" style="background-image:url(/videos/gallery/2.jpg)" onclick="openVideo(this)"></div>
-<div class="item" style="background-image:url(/videos/gallery/3.jpg)" onclick="openVideo(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/videos/gallery/1.jpg)" onclick="openVideo(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/videos/gallery/2.jpg)" onclick="openVideo(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/videos/gallery/3.jpg)" onclick="openVideo(this)"></div>
 <script>
 	function openVideo(elem){
 		//console.log(elem.style.backgroundImage)
@@ -12,20 +12,20 @@
 		document.getElementById('video-elem').innerHTML = '';
 		var video = document.createElement("VIDEO");
 			video.setAttribute("id","lightbox-video")
-			video.setAttribute("poster","/videos/gallery/"+videoNumber+".jpg");
+			video.setAttribute("poster","<%=bucket%>/videos/gallery/"+videoNumber+".jpg");
 			video.setAttribute("autoplay","autoplay")
 			video.setAttribute("controls","controls");
 			video.setAttribute("loop","loop");
-			video.innerHTML = "<source src=\"/videos/gallery/"+videoNumber+".mp4\" type=\"video/mp4\">";
+			video.innerHTML = "<source src=\"<%=bucket%>/videos/gallery/"+videoNumber+".mp4\" type=\"video/mp4\">";
 		document.getElementById('video-elem').appendChild(video);
 		document.getElementById("video").style.display="block";
 		document.getElementById("lightbox-video").play();
 	}
 </script>
-<div class="videoLightbox" id="video" onclick="this.style.display='none';document.getElementById('lightbox-video').pause();document.getElementById('lightbox-video').innerHTML = '';">
+<div class="videoLightbox"id="video" onclick="this.style.display='none';document.getElementById('lightbox-video').pause();document.getElementById('lightbox-video').innerHTML = '';">
 	<div class="lightboxContent" onclick="event.stopPropagation()">
 		<div id="video-elem">
 		</div>
-		<div class="close" onclick="document.getElementById('video').style.display='none';document.getElementById('lightbox-video').pause();document.getElementById('lightbox-video').innerHTML = '';"></div>
+		<div class="close" style="background-image:url(<%=bucket%>/images/close.png);" onclick="document.getElementById('video').style.display='none';document.getElementById('lightbox-video').pause();document.getElementById('lightbox-video').innerHTML = '';"></div>
 	</div>
 </div>

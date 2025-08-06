@@ -1,14 +1,14 @@
 <%- include ("partials/header") -%>
 	<div class="home">
 		<div class="homeVideo">
-			<video class="desktop" poster="/videos/video2.jpg" muted autoplay loop>
-				<source src="/videos/video2.mp4" type="video/mp4">
+			<video class="desktop" poster="<%=bucket%>/videos/video2.jpg" muted autoplay loop>
+				<source src="<%=bucket%>/videos/video2.mp4" type="video/mp4">
 			</video>
-			<video class="mobile" poster="/videos/video3.jpg" muted autoplay loop>
-				<source src="/videos/video3.mp4" type="video/mp4">
+			<video class="mobile" poster="<%=bucket%>/videos/video3.jpg" muted autoplay loop>
+				<source src="<%=bucket%>/videos/video3.mp4" type="video/mp4">
 			</video>
 			<div class="logo">
-				<img src="/logos/logo.jpg">
+				<img src="<%=bucket%>/logos/logo.jpg">
 			</div>
 			<div class="triangleLeft"></div>
 			<div class="triangleRight"></div>
@@ -44,19 +44,19 @@
 				<div class="title">Sadržaj Padel Zone Sinđelić</div>
 				<div class="inlines">
 					<div class="inline">
-						<div class="icon"><img src="/images/courtIcon.png"></div>
+						<div class="icon"><img src="<%=bucket%>/images/courtIcon.png"></div>
 						<div class="note">TERENI</div>
 					</div>
 					<div class="inline">
-						<div class="icon"><img src="/images/opremaIcon.png"></div>
+						<div class="icon"><img src="<%=bucket%>/images/opremaIcon.png"></div>
 						<div class="note">OPREMA</div>
 					</div>
 					<div class="inline">
-						<div class="icon"><img src="/images/beerIcon.png"></div>
+						<div class="icon"><img src="<%=bucket%>/images/beerIcon.png"></div>
 						<div class="note">BAR</div>
 					</div>
 					<div class="inline">
-						<div class="icon"><img src="/images/parkingIcon.png"></div>
+						<div class="icon"><img src="<%=bucket%>/images/parkingIcon.png"></div>
 						<div class="note">PARKING</div>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 				<div class="inlines">
 					<div class="news">
 						<div class="imageWrap">
-							<img src="/images/vest.jpg">
+							<img src="<%=bucket%>/images/vest.jpg">
 						</div>
 						<div class="textWrap">
 							<div class="title">
@@ -88,7 +88,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="picture">
+		<div class="picture" style="background-image:url(<%=bucket%>/images/padel2.jpg)">
 			<div class="overlay"></div>
 			<div class="topTriangle"></div>
 			<div class="bottomTriangle"></div>
@@ -101,7 +101,7 @@
 						</div>
 					</div>
 					<div class="inline image">
-						<img src="/images/teren.png">
+						<img src="<%=bucket%>/images/teren.png">
 					</div>
 				</div>
 			</div>
@@ -111,11 +111,11 @@
 				<div class="title">Galerija</div>
 				<div class="categories" id="categories">
 					<div class="category" id="gallery-init" data-name="pictures" onclick="categoryPick(this)">
-						<div class="icon"><img src="/images/picturesIcon.png"></div>
+						<div class="icon"><img src="<%=bucket%>/images/picturesIcon.png"></div>
 						<div class="note">Fotografije</div>
 					</div>
 					<div class="category" data-name="videos" onclick="categoryPick(this)">
-						<div class="icon"><img src="/images/videosIcon.png"></div>
+						<div class="icon"><img src="<%=bucket%>/images/videosIcon.png"></div>
 						<div class="note">Video</div>
 					</div>
 				</div>

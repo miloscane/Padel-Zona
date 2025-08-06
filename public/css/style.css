@@ -729,8 +729,8 @@ footer .inlines .inline .item .note{
     text-align:left;
 }
 
+
 .home .picture{
-    background-image:url(/images/padel2.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -933,7 +933,6 @@ footer .inlines .inline .item .note{
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image:url(/images/close.png);
     position:absolute;
     top:10px;
     right:10px;
@@ -997,7 +996,7 @@ footer .inlines .inline .item .note{
 }
 
 .about .pageHeader{
-    background-image:url(/images/oNama.jpg);
+    
 }
 
 .titleText{
@@ -1081,19 +1080,19 @@ footer .inlines .inline .item .note{
 }
 
 .about .imageTitleSection{
-    background-image:url(/images/oNama2.jpg);
+    
 }
 
 .pravila .pageHeader{
-    background-image:url(/images/pravila.jpg);
+    
 }
 
 .pravila .imageTitleSection{
-    background-image:url(/images/padel2.jpg);
+    
 }
 
 .cenovnik .pageHeader{
-    background-image:url(/images/cenovnik.jpg);
+    
 }
 
 .cenovnik .tableTitle{
@@ -1138,7 +1137,7 @@ footer .inlines .inline .item .note{
 }
 
 .vesti .pageHeader{
-    background-image:url(/images/vesti.jpg);
+    
 }
 
 .galerijaPage .galerijaHeader{
@@ -1262,7 +1261,7 @@ footer .inlines .inline .item .note{
 }
 
 .vest .pageHeader{
-    background-image:url(/images/vesti.jpg);
+    
 }
 
 
@@ -1324,7 +1323,7 @@ footer .inlines .inline .item .note{
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image:url(/images/close.png);
+    
     position:absolute;
     top:10px;
     right:10px;
@@ -1363,7 +1362,6 @@ footer .inlines .inline .item .note{
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image:url(/images/close.png);
     position:absolute;
     top:10px;
     right:10px;
@@ -1516,14 +1514,6 @@ footer .inlines .inline .item .note{
     vertical-align: middle;
     font-size:14px;
     padding:20px;
-}
-
-.rezervacije .nedelja .arrowLeft{
-    background-image:url(/images/navLeft.png);
-}
-
-.rezervacije .nedelja .arrowRight{
-    background-image:url(/images/navRight.png);
 }
 
 .rezervacije .nedelja .nedeljaWrap .dayElem{

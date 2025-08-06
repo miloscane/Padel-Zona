@@ -1,22 +1,22 @@
-<div class="item" style="background-image:url(/images/gallery/1.jpg)" onclick="openPhoto(this)"></div>
-<div class="item" style="background-image:url(/images/gallery/2.jpg)" onclick="openPhoto(this)"></div>
-<div class="item" style="background-image:url(/images/gallery/3.jpg)" onclick="openPhoto(this)"></div>
-<div class="item" style="background-image:url(/images/gallery/4.jpg)" onclick="openPhoto(this)"></div>
-<div class="item" style="background-image:url(/images/gallery/5.jpg)" onclick="openPhoto(this)"></div>
-<div class="item" style="background-image:url(/images/gallery/6.jpg)" onclick="openPhoto(this)"></div>
-<div class="item" style="background-image:url(/images/gallery/7.jpg)" onclick="openPhoto(this)"></div>
-<div class="item" style="background-image:url(/images/gallery/8.jpg)" onclick="openPhoto(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/images/gallery/1.jpg)" onclick="openPhoto(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/images/gallery/2.jpg)" onclick="openPhoto(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/images/gallery/3.jpg)" onclick="openPhoto(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/images/gallery/4.jpg)" onclick="openPhoto(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/images/gallery/5.jpg)" onclick="openPhoto(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/images/gallery/6.jpg)" onclick="openPhoto(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/images/gallery/7.jpg)" onclick="openPhoto(this)"></div>
+<div class="item" style="background-image:url(<%=bucket%>/images/gallery/8.jpg)" onclick="openPhoto(this)"></div>
 <script>
 	function openPhoto(elem){
 		//console.log(elem.style.backgroundImage)
 		var photoNumber = elem.style.backgroundImage.split(".jp")[0][elem.style.backgroundImage.split(".jp")[0].length-1];
 		//console.log(videoNumber)
-		document.getElementById("photo-elem").style.backgroundImage= "url(/images/gallery/"+photoNumber+"-full.jpg";
+		document.getElementById("photo-elem").style.backgroundImage= "url(<%=bucket%>/images/gallery/"+photoNumber+"-full.jpg";
 		document.getElementById("photo").style.display="block";
 	}
 </script>
 <div class="photoLightbox" id="photo" onclick="this.style.display='none';">
 	<div class="lightboxContent" id="photo-elem" onclick="event.stopPropagation()">
-		<div class="close" onclick="document.getElementById('photo').style.display='none';"></div>
+		<div class="close" style="background-image:url(<%=bucket%>/images/close.png);" onclick="document.getElementById('photo').style.display='none';"></div>
 	</div>
 </div>
