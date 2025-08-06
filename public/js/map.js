@@ -172,7 +172,7 @@ function initMap() {
 		position: myLatLng,
 		map: map,
     icon:{
-      url: "https://padelzona.rs/images/map.png"
+      url: "https://media.padelzona.rs/images/map.png"
      }
 		//title: 'Tehnik'
 	});
