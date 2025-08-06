@@ -184,7 +184,7 @@
 			function make_base3(){
 			  base_image3 = new Image();
 			  base_image3.crossOrigin="anonymous"
-			  base_image3.src = '/logos/logo2.png';
+			  base_image3.src = '<%=bucket%>/logos/logo2.png';
 			  base_image3.onload = function(){
 			    logoCanvasContext.drawImage(base_image3, 0, 0);
 			    logoLogoBlob 	=	logoCanvas.toDataURL("image/png", 1.0);
