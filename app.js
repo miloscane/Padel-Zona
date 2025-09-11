@@ -32,6 +32,7 @@ server.use(session({
 }));
 const mongourl	=	process.env.mongourl;
 const client 	= 	new MongoClient(mongourl,{});
+var mapKey = process.env.googlemaps;
 var rezervacijeDB;
 
 var bucket = process.env.bucket ? process.env.bucket : ""
@@ -88,13 +89,15 @@ http.listen(process.env.PORT, function(){
 
 server.get('/',async (req,res)=>{
 	res.render("home",{
-		bucket: bucket
+		bucket: bucket,
+		mapKey: mapKey
 	});
 });
 
 server.get('/o-nama',async (req,res)=>{
 	res.render("onama",{
 		bucket: bucket
+		mapKey: mapKey
 	});
 });
 
