@@ -93,7 +93,7 @@ server.get('/',async (req,res)=>{
 		mapKey: mapKey
 	});
 });
-
+ 
 server.get('/o-nama',async (req,res)=>{
 	res.render("onama",{
 		bucket: bucket
