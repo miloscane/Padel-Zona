@@ -1915,15 +1915,15 @@ footer .inlines .inline .item .note{
 
     .letnjiCenovnik .table .row .price{
         padding-left:10px;
-        font-size:20px;
+        font-size:14px;
     }
 
     .letnjiCenovnik .table .row .text .main{
-        font-size:16px;
+        font-size:14px;
     }
 
     .letnjiCenovnik .table .row .text .sub{
-        font-size:16px;
+        font-size:14px;
     }
 }
 
