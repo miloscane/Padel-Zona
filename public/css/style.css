@@ -1904,27 +1904,6 @@ footer .inlines .inline .item .note{
         width:90%;
         margin:0 auto;
     }
-}
-
-@media screen and (max-width: 600px) {
-    footer .footerContent .footerLogo .inline{
-        font-size:10px;
-    }
-    footer .footerContent .copyright{
-        font-size:10px;
-    }
-
-    .galerijaPage .galerijaHeader .left .description{
-        display:none;
-    }    
-
-    .homeVideo .mobile{
-        display:block;
-    }
-
-    .homeVideo .desktop{
-        display:none;
-    }
 
     .letnjiCenovnik .table .row{
         padding:10px 20px;
@@ -1945,6 +1924,27 @@ footer .inlines .inline .item .note{
 
     .letnjiCenovnik .table .row .text .sub{
         font-size:16px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer .footerContent .footerLogo .inline{
+        font-size:10px;
+    }
+    footer .footerContent .copyright{
+        font-size:10px;
+    }
+
+    .galerijaPage .galerijaHeader .left .description{
+        display:none;
+    }    
+
+    .homeVideo .mobile{
+        display:block;
+    }
+
+    .homeVideo .desktop{
+        display:none;
     }
 }
 
