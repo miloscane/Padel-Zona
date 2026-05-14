@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
 
 html{
     font-family: 'Montserrat', sans-serif;
@@ -1663,6 +1664,108 @@ footer .inlines .inline .item .note{
     margin-bottom:10px;
 }
 
+.letnjiCenovnik .titleWrap .logoWrap{
+    width:250px;
+    margin:0 auto;
+}
+
+.letnjiCenovnik .titleWrap .title1{
+    font-weight:500;
+    font-size:26px;
+    text-align:center;
+    margin-top:24px;
+}
+
+.letnjiCenovnik .titleWrap .title2{
+    font-weight:800;
+    font-size:36px;
+    text-align:center;
+    margin-top:4px;
+    color:rgb(205,157,98);
+}
+
+
+.letnjiCenovnik .titleWrap .title3{
+    display:flex;
+    align-items: center;
+    gap:10px;
+    max-width: 350px;
+    margin:0 auto;
+}
+
+.letnjiCenovnik .titleWrap .title3 .border{
+    width:50px;
+    height:2px;
+    background-color: rgb(205,157,98);
+    flex-shrink: 0;
+    border-radius: 99px;
+}
+
+.letnjiCenovnik .titleWrap .title3 .text{
+    flex-grow: 1;
+    font-family: "Oooh Baby", cursive;
+      font-weight: 400;
+      font-style: normal;
+      font-size:50px;
+      text-align: center;
+}
+
+.letnjiCenovnik .table{
+    background-color:rgb(109,18,25);
+    color:rgb(255,255,255);
+}
+
+.letnjiCenovnik .table .row{
+    padding:20px 40px;
+    border-bottom: 1px solid rgb(205,157,98);
+    display:flex;
+    align-items: center;
+}
+
+.letnjiCenovnik .table .row .icon{
+    flex-shrink: 0;
+    text-align: center;
+    padding:20px;
+    width:100px;
+    padding-left:0px;
+}
+
+.letnjiCenovnik .table .row .icon img{
+    display: block;
+    margin:0 auto;
+}
+
+.letnjiCenovnik .table .row .border{
+    flex-shrink: 0;
+    width:1px;
+    background-color: rgb(205,157,98);
+     align-self: stretch;
+}
+
+.letnjiCenovnik .table .row .text{
+    padding:20px;
+    flex:1;
+}
+
+.letnjiCenovnik .table .row .text .main{
+    font-size:22px;
+    font-weight:500;
+}
+
+.letnjiCenovnik .table .row .text .sub{
+    font-size:22px;
+    font-weight:700;
+    color:rgb(205,157,98)
+}
+
+
+.letnjiCenovnik .table .row .price{
+    padding-left:20px;
+    font-weight:800;
+    font-size:24px;
+}
+
+
 
 @media screen and (max-width: 850px) {
     .home .trioInfo .inlines .inline{
@@ -1821,6 +1924,27 @@ footer .inlines .inline .item .note{
 
     .homeVideo .desktop{
         display:none;
+    }
+
+    .letnjiCenovnik .table .row{
+        padding:10px 20px;
+    }
+
+    .letnjiCenovnik .table .row .icon{
+        width:70px;
+    }
+
+    .letnjiCenovnik .table .row .price{
+        padding-left:10px;
+        font-size:20px;
+    }
+
+    .letnjiCenovnik .table .row .text .main{
+        font-size:16px;
+    }
+
+    .letnjiCenovnik .table .row .text .sub{
+        font-size:16px;
     }
 }
 
